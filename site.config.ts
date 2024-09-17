@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'PureDev Blog',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
+  domain: 'puredev.xyz',
   author: 'Pure',
 
   // open graph metadata (optional)
