@@ -4,6 +4,8 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
 import * as Fathom from 'fathom-client'
+// vercel analytics added
+import { Analytics } from '@vercel/analytics/react'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
 import posthog from 'posthog-js'
@@ -61,5 +63,10 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  )
 }

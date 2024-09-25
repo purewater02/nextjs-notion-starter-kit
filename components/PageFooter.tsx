@@ -1,5 +1,7 @@
 import * as React from 'react'
-import Giscus from '@giscus/react';
+
+import Giscus from '@giscus/react'
+
 import * as config from '@/lib/config'
 
 import styles from './styles.module.css'
@@ -12,21 +14,21 @@ export const PageFooter: React.FC<{
     return (
       <div className={styles.comments}>
         <Giscus
-          id="comments"
+          id='comments'
           repo={config.giscusRepo}
           repoId={config.giscusRepoId}
           category={config.giscusCategory}
           categoryId={config.giscusCategoryId}
-          mapping="pathname"
-          reactionsEnabled="1"
-          emitMetadata="0"
-          inputPosition="bottom"
-          theme="dark_tritanopia"
-          lang="ko"
-          loading="lazy"
+          mapping='pathname'
+          reactionsEnabled='1'
+          emitMetadata='0'
+          inputPosition='bottom'
+          theme='dark_tritanopia'
+          lang='ko'
+          loading='lazy'
         />
       </div>
-    );
+    )
   }
 
   return null

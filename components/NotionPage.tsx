@@ -25,8 +25,8 @@ import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
-import { PageHead } from './PageHead'
 import { PageFooter } from './PageFooter'
+import { PageHead } from './PageHead'
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
@@ -202,9 +202,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   )
 
   const pageFooter = React.useMemo(
-    () => (
-      <PageFooter isBlogPost={isBlogPost} />
-    ),
+    () => <PageFooter isBlogPost={isBlogPost} />,
     [isBlogPost]
   )
 
