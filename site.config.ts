@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'PureDev Blog',
-  domain: 'puredev.xyz',
+  domain: 'blog.puredev.xyz',
   author: 'Pure',
 
   // open graph metadata (optional)
