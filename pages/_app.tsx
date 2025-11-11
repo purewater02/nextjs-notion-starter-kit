@@ -12,10 +12,10 @@ import 'styles/global.css'
 import 'styles/notion.css'
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
-// vercel analytics added
-import { Analytics } from '@vercel/analytics/react'
 
 import type { AppProps } from 'next/app'
+// vercel analytics added
+import { Analytics } from '@vercel/analytics/react'
 import * as Fathom from 'fathom-client'
 import { useRouter } from 'next/router'
 import { posthog } from 'posthog-js'
