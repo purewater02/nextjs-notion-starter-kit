@@ -1,4 +1,4 @@
-import { Repo } from '@giscus/react'
+import type { Repo } from '@giscus/react'
 
 import type * as types from './types'
 

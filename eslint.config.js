@@ -6,6 +6,13 @@ export default [
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
       'react/prop-types': 'off',
+      'react/function-component-definition': [
+        'error',
+        {
+          namedComponents: 'arrow-function',
+          unnamedComponents: 'arrow-function'
+        }
+      ],
       'unicorn/no-array-reduce': 'off',
       'unicorn/filename-case': 'off',
       'unicorn/prefer-global-this': 'off',

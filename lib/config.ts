@@ -4,7 +4,7 @@
  * This file pulls from the root "site.config.ts" as well as environment variables
  * for optional depenencies.
  */
-import { Repo } from '@giscus/react'
+import type { Repo } from '@giscus/react'
 import { parsePageId } from 'notion-utils'
 import { type PostHogConfig } from 'posthog-js'
 
@@ -66,16 +66,10 @@ export const newsletter: string | undefined = getSiteConfig('newsletter')
 export const zhihu: string | undefined = getSiteConfig('zhihu')
 
 // giscus config
-export const giscusRepo: Repo | undefined = getSiteConfig('giscusRepo')
-export const giscusRepoId: string | undefined = getSiteConfig('giscusRepoId')
-export const giscusCategory: string | undefined = getSiteConfig(
-  'giscusCategory',
-  null
-)
-export const giscusCategoryId: string | null = getSiteConfig(
-  'giscusCategoryId',
-  null
-)
+export const giscusRepo: Repo = getSiteConfig('giscusRepo')
+export const giscusRepoId: string = getSiteConfig('giscusRepoId')
+export const giscusCategory: string = getSiteConfig('giscusCategory')
+export const giscusCategoryId: string = getSiteConfig('giscusCategoryId')
 
 export const getMastodonHandle = (): string | undefined => {
   if (!mastodon) {

@@ -1,6 +1,5 @@
+import Giscus, { type Repo } from '@giscus/react'
 import * as React from 'react'
-
-import Giscus from '@giscus/react'
 
 import * as config from '@/lib/config'
 
@@ -11,14 +10,24 @@ export const PageFooter: React.FC<{
 }> = ({ isBlogPost }) => {
   // only display comments and page actions on blog post pages
   if (isBlogPost) {
+    const hasGiscusConfig =
+      config.giscusRepo &&
+      config.giscusRepoId &&
+      config.giscusCategory &&
+      config.giscusCategoryId
+
+    if (!hasGiscusConfig) {
+      return null
+    }
+
     return (
       <div className={styles.comments}>
         <Giscus
           id='comments'
-          repo={config.giscusRepo}
-          repoId={config.giscusRepoId}
-          category={config.giscusCategory}
-          categoryId={config.giscusCategoryId}
+          repo={config.giscusRepo as Repo}
+          repoId={config.giscusRepoId!}
+          category={config.giscusCategory!}
+          categoryId={config.giscusCategoryId!}
           mapping='pathname'
           reactionsEnabled='1'
           emitMetadata='0'

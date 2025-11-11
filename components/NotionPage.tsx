@@ -232,7 +232,7 @@ export function NotionPage({
   const isBlogPost =
     block?.type === 'page' && block?.parent_table === 'collection'
 
-  const showTableOfContents = !!isBlogPost
+  const showTableOfContents = isBlogPost
   const minTableOfContentsItems = 3
 
   const pageAside = React.useMemo(
@@ -270,14 +270,14 @@ export function NotionPage({
     rootNotionPageId: site.rootNotionPageId,
     recordMap
   })
-
-  if (!config.isServer) {
-    // add important objects to the window global for easy debugging
-    const g = window as any
-    g.pageId = pageId
-    g.recordMap = recordMap
-    g.block = block
-  }
+  //
+  // if (!config.isServer) {
+  //   // add important objects to the window global for easy debugging
+  //   const g = window as any
+  //   g.pageId = pageId
+  //   g.recordMap = recordMap
+  //   g.block = block
+  // }
 
   const canonicalPageUrl = config.isDev
     ? undefined
